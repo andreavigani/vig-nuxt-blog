@@ -53,7 +53,7 @@ export default {
   async asyncData({ params, error, req }) {
     try{
       // Query to get API object
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint + "?access_token=" + PrismicConfig.accessToken, {req})
+      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, {req})
 
       // Query to get post content
       const post = await api.getByUID("post", params.uid)

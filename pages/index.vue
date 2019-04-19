@@ -46,7 +46,7 @@ export default {
   async asyncData({context, error, req}) {
     try{
       // Query to get API object
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint + "?access_token=" + PrismicConfig.accessToken, {req})
+      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, {req})
 
       // Query to get blog home content
       const document = await api.getSingle('blog_home')
